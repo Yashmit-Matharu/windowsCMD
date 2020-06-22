@@ -1,0 +1,8 @@
+-- Map Network Drive from Command Prompt
+c:\windows\system32\cmd.exe exe /c net use Z:\\Drive\Share /user:xxx xxx /persistent:No
+
+-- Find latest file in directory and output contents
+c:\windows\system32\cmd.exe /c powershell -command "Get-Content -Path ($text = Get-ChildItem Z:\dir\file_* | Sort-Object -Last 1)"
+
+-- Windows Scheduled Tasks, exluding OS tasks with Microsoft in title
+c:\windows\system32\cmd.exe cmd /c echo TaskName, NextRun, Status & SCHTASKS /Query /FO CSV | findstr /v Microsoft
